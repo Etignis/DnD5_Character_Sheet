@@ -1,0 +1,51 @@
+#wrapper{
+
+}
+.sheet{
+    background-color: @white;
+    width: 21cm;
+    height: 30cm;
+    margin: 0 auto;
+    padding: 0.8cm;
+}
+
+.abilities{
+    background: @ll-gray;
+    border-radius: .2cm;
+    padding: .2cm;
+    padding-top: .4cm;
+    flex-grow: 0.3;
+    
+    .ability{
+        .row();
+        border: 2px solid @d-gray;
+        border-radius: .2cm;
+        position: relative;
+        background: @white;
+        margin-bottom: .4cm;
+        
+        .title{
+            margin: 0.1cm;
+            text-transform: uppercase;
+            font-size: 60%;
+            font-weight: bold;
+        }
+        .modificator{
+            height: 1.7cm;
+            text-align: center;
+        }
+        .number{
+            position: absolute;
+            bottom: -.2cm;
+            height: .7cm;            
+            left: .3cm;            
+            right: .3cm;
+            display: block;
+            background: @white;
+            padding: .1cm;
+            
+            border: 2px solid @d-gray;
+            border-radius: .2cm;
+        }
+    }
+}
