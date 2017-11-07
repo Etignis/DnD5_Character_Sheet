@@ -1118,57 +1118,12 @@ a:hover {
 #footer .flex_footer {
   text-align: center;
 }
-.flex-nowrap {
-  flex-wrap: nowrap;
-}
 .sheet {
   background-color: #fff;
   width: 21cm;
   height: 30cm;
   margin: 0 auto;
   padding: 0.8cm;
-}
-.header_char {
-  display: flex;
-  margin-bottom: .3cm;
-}
-.header_char_main_info {
-  flex-grow: 2;
-  display: flex;
-  border: 2px solid #222;
-  border-radius: .2cm;
-}
-.header_char_main_info .char_name {
-  flex-grow: 3;
-}
-.header_char_main_info .char_level {
-  flex-shrink: 3;
-}
-.header_char_other_info {
-  flex-grow: 3;
-  border: 2px solid #222;
-  border-radius: .2cm;
-}
-.labled_input {
-  display: flex;
-  flex-wrap: wrap;
-  flex-shrink: 1;
-  flex-grow: 1;
-}
-.labled_input input {
-  width: 100%;
-  border: none;
-  border-bottom: 1px solid #ddd;
-  border-radius: .2cm;
-}
-.labled_input label {
-  width: 100%;
-}
-.abilities_skills .column {
-  flex-grow: 3;
-}
-.abilities_skills .abilities {
-  flex-grow: 1;
 }
 .abilities {
   background: #eee;
@@ -1207,10 +1162,6 @@ a:hover {
   display: block;
   background: #fff;
   padding: .1cm;
-  border: 2px solid #222;
-  border-radius: .2cm;
-}
-.saving_throws {
   border: 2px solid #222;
   border-radius: .2cm;
 }
