@@ -66,7 +66,7 @@
     padding: .2cm;
     padding-top: .4cm;
     flex-grow: 0.3;
-    
+
     .ability{
         .row();
         border: 2px solid @d-gray;
@@ -74,7 +74,7 @@
         position: relative;
         background: @white;
         margin-bottom: .4cm;
-        
+
         .title{
             margin: 0.1cm;
             text-transform: uppercase;
@@ -88,13 +88,13 @@
         .number{
             position: absolute;
             bottom: -.2cm;
-            height: .7cm;            
-            left: .3cm;            
+            height: .7cm;
+            left: .3cm;
             right: .3cm;
             display: block;
             background: @white;
             padding: .1cm;
-            
+
             border: 2px solid @d-gray;
             border-radius: .2cm;
         }
@@ -104,4 +104,165 @@
 .saving_throws{
   border: 2px solid @d-gray;
   border-radius: .2cm;
+
+  .item{
+    width: 100%;
+  }
+}
+
+.skills{
+  border: 2px solid @d-gray;
+  border-radius: .2cm;
+
+  .item{
+    width: 100%;
+  }
+}
+
+.passive_wisdom{
+  border: 2px solid @d-gray;
+  border-radius: .2cm;
+
+  display: flex;
+  width: 100%;
+
+  .number{
+    border: 2px solid @d-gray;
+    border-radius: .2cm;
+  }
+  .title{
+    flex-grow: 6;
+  }
+}
+
+.other_proficiencies{
+  border: 2px solid @d-gray;
+  border-radius: .2cm;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .text{
+    flex-grow: 7;
+  }
+  .title{
+
+  }
+
+}
+
+/* second column */
+.panel{
+  /*border: 2px solid @d-gray;*/
+  border-radius: .2cm;
+  background: @l-gray;
+
+  .parameter{
+    border: 2px solid @d-gray;
+    border-radius: .2cm;
+    position: relative;
+    .title{
+      position: absolute;
+      bottom: .1cm;
+      left: .1cm;
+      right: .1cm;
+    }
+    .number{
+      width: 100%;
+      height: 2cm;
+    }
+  }
+
+}
+
+.hitpoints{
+  border: 2px solid @d-gray;
+  border-radius: .2cm;
+
+  .maximum{
+    display: flex;
+
+    .title{
+    }
+    .number{
+      border-bottom: 1px solid @m-gray;
+    }
+  }
+  .current{
+    position: relative;
+    .title{
+      position: absolute;
+      bottom: .2cm;
+      left: .2cm;
+      right: .2cm;
+    }
+    .number{
+      width: 100%;
+    }
+  }
+}
+
+.temporary_hitpoint{
+  border: 2px solid @d-gray;
+  border-radius: .2cm;
+  width: 100%;
+  position: relative;
+  .title{
+    position: absolute;
+    bottom: .2cm;
+    left: .2cm;
+    right: .2cm;
+  }
+  .number{
+    width: 100%;
+  }
+}
+
+.hit_dice{
+  border: 2px solid @d-gray;
+  border-radius: .2cm;
+  width: 100%;
+
+  .total{
+    display: flex;
+
+    .title{
+
+    }
+    .number{
+      border-bottom: 1px solid @m-gray;
+    }
+  }
+
+  .type{
+    display: flex;
+    flex-direction: column;
+    .title{
+      text-align: center;
+    }
+    .number{
+      flex-grow: 3;
+    }
+  }
+}
+
+.death_saves{
+  border: 2px solid @d-gray;
+  border-radius: .2cm;
+  width: 100%;
+}
+
+/* 3 column */
+
+.personality{
+  .item{
+    display: flex;
+    flex-direction: column;
+    .text{
+      flex-grow: 4;
+    }
+    .title{
+      text-align: center;
+    }
+  }
 }
