@@ -765,18 +765,18 @@ button:active,
 	float: none;
     clear: both;
     overflow: hidden;
-    
+
     &:before, &:after{
         content: "";
         .clear;
         display: table;
-    }  	
+    }
     .left{
     	float: left;
     	text-align: left;
-    } 	
+    }
     .right{
-    	float: right;	
+    	float: right;
     	text-align: right;
     }
     .col2{
@@ -810,9 +810,11 @@ button:active,
   flex-flow: row wrap;
   justify-content: space-around;
   align-items: stretch;
+  width: 100%;
 }
 .column {
   flex: 1 1 0;
+  flex-wrap: nowrap;
 }
 * {
   box-sizing: border-box;
@@ -1127,92 +1129,373 @@ a:hover {
   height: 30cm;
   margin: 0 auto;
   padding: 0.8cm;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 2fr 3fr;
+  grid-template-rows: 2fr  2fr 3fr 1fr 5fr 4fr;
+  grid-gap: 10px;
 }
-.header_char {
+.sheet div {
+  background: rgba(0, 0, 0, 0.1);
+}
+.header_left {
+  grid-column: 1 / 4;
+  grid-row: 1;
+}
+.header_right {
+  grid-column: 4 / 6;
+  grid-row: 1;
+}
+.abilities {
+  grid-column: 1;
+  grid-row: 2 / 6;
+}
+.inspiration_PB {
+  grid-column: 2;
+  grid-row: 2;
+}
+.saving_throws {
+  grid-column: 2;
+  grid-row: 3;
+}
+.skills {
+  grid-column: 2;
+  grid-row: 4/6;
+}
+.PW_other {
+  grid-column: 1 / 3;
+  grid-row: 6;
+}
+.hit {
+  grid-column: 3 / 5;
+  grid-row: 2 / 5;
+}
+.attack {
+  grid-column: 3 / 5;
+  grid-row: 5 / 6;
+}
+.equipment {
+  grid-column: 3 / 5;
+  grid-row: 6;
+}
+.traits {
+  grid-column: 5;
+  grid-row: 2 / 5;
+}
+.features {
+  grid-column: 5;
+  grid-row: 5 / 7;
+}
+/*/
+.header_char{
   display: flex;
   margin-bottom: .3cm;
 }
-.header_char_main_info {
+.header_char_main_info{
   flex-grow: 2;
   display: flex;
-  border: 2px solid #222;
+  border: 2px solid @d-gray;
   border-radius: .2cm;
+
+  .char_name{
+    flex-grow: 3;
+  }
+  .char_level{
+    flex-shrink: 3;
+  }
 }
-.header_char_main_info .char_name {
+.header_char_other_info{
   flex-grow: 3;
-}
-.header_char_main_info .char_level {
-  flex-shrink: 3;
-}
-.header_char_other_info {
-  flex-grow: 3;
-  border: 2px solid #222;
+  border: 2px solid @d-gray;
   border-radius: .2cm;
+
 }
-.labled_input {
+.labled_input{
   display: flex;
   flex-wrap: wrap;
   flex-shrink: 1;
   flex-grow: 1;
+  input{
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid @l-gray;
+    border-radius: .2cm;
+  }
+  label{
+    width: 100%;
+    font-size: 90%;
+    color: @m-gray;
+  }
 }
-.labled_input input {
-  width: 100%;
-  border: none;
-  border-bottom: 1px solid #ddd;
+
+.abilities_skills{
+  .column{
+    flex-grow: 3;
+  }
+  .abilities{
+    flex-grow: 1;
+  }
+}
+
+.abilities{
+    background: @ll-gray;
+    border-radius: .2cm;
+    padding: .2cm;
+    padding-top: .4cm;
+    flex-grow: 0.3;
+
+    .ability{
+        .row();
+        border: 2px solid @d-gray;
+        border-radius: .2cm;
+        position: relative;
+        background: @white;
+        margin-bottom: .4cm;
+
+        .title{
+            margin: 0.1cm;
+            text-transform: uppercase;
+            font-size: 60%;
+            font-weight: bold;
+        }
+        .modificator{
+            height: 1.7cm;
+            text-align: center;
+        }
+        .number{
+            position: absolute;
+            bottom: -.2cm;
+            height: .7cm;
+            left: .3cm;
+            right: .3cm;
+            display: block;
+            background: @white;
+            padding: .1cm;
+
+            border: 2px solid @d-gray;
+            border-radius: .2cm;
+        }
+    }
+}
+
+.saving_throws{
+  border: 2px solid @d-gray;
   border-radius: .2cm;
+
+  .item{
+    width: 100%;
+  }
 }
-.labled_input label {
-  width: 100%;
-}
-.abilities_skills .column {
-  flex-grow: 3;
-}
-.abilities_skills .abilities {
-  flex-grow: 1;
-}
-.abilities {
-  background: #eee;
+
+.skills{
+  border: 2px solid @d-gray;
   border-radius: .2cm;
-  padding: .2cm;
-  padding-top: .4cm;
-  flex-grow: 0.3;
+
+  .item{
+    width: 100%;
+  }
 }
-.abilities .ability {
+
+.passive_wisdom{
+  border: 2px solid @d-gray;
+  border-radius: .2cm;
+
   display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-  align-items: stretch;
-  border: 2px solid #222;
+  width: 100%;
+
+  .number{
+    border: 2px solid @d-gray;
+    border-radius: .2cm;
+  }
+  .title{
+    flex-grow: 6;
+  }
+}
+
+.other_proficiencies{
+  border: 2px solid @d-gray;
   border-radius: .2cm;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .text{
+    flex-grow: 7;
+  }
+  .title{
+
+  }
+
+}
+
+.panel{
+
+  border-radius: .2cm;
+  background: @l-gray;
+
+  .parameter{
+    border: 2px solid @d-gray;
+    border-radius: .2cm;
+    position: relative;
+    .title{
+      position: absolute;
+      bottom: .1cm;
+      left: .1cm;
+      right: .1cm;
+    }
+    .number{
+      width: 100%;
+      height: 2cm;
+    }
+  }
+
+}
+
+.hitpoints{
+  border: 2px solid @d-gray;
+  border-radius: .2cm;
+
+  .maximum{
+    display: flex;
+
+    .title{
+    }
+    .number{
+      border-bottom: 1px solid @m-gray;
+    }
+  }
+  .current{
+    position: relative;
+    .title{
+      position: absolute;
+      bottom: .2cm;
+      left: .2cm;
+      right: .2cm;
+    }
+    .number{
+      width: 100%;
+    }
+  }
+}
+
+.temporary_hitpoint{
+  border: 2px solid @d-gray;
+  border-radius: .2cm;
+  width: 100%;
   position: relative;
-  background: #fff;
-  margin-bottom: .4cm;
+  .title{
+    position: absolute;
+    bottom: .2cm;
+    left: .2cm;
+    right: .2cm;
+  }
+  .number{
+    width: 100%;
+  }
 }
-.abilities .ability .title {
-  margin: 0.1cm;
-  text-transform: uppercase;
-  font-size: 60%;
-  font-weight: bold;
-}
-.abilities .ability .modificator {
-  height: 1.7cm;
-  text-align: center;
-}
-.abilities .ability .number {
-  position: absolute;
-  bottom: -0.2cm;
-  height: .7cm;
-  left: .3cm;
-  right: .3cm;
-  display: block;
-  background: #fff;
-  padding: .1cm;
-  border: 2px solid #222;
+
+.hit_dice{
+  border: 2px solid @d-gray;
   border-radius: .2cm;
+  width: 100%;
+
+  .total{
+    display: flex;
+
+    .title{
+
+    }
+    .number{
+      border-bottom: 1px solid @m-gray;
+    }
+  }
+
+  .type{
+    display: flex;
+    flex-direction: column;
+    .title{
+      text-align: center;
+    }
+    .number{
+      flex-grow: 3;
+    }
+  }
 }
-.saving_throws {
-  border: 2px solid #222;
+
+.death_saves{
+  border: 2px solid @d-gray;
   border-radius: .2cm;
+  width: 100%;
 }
+
+.attack{
+  table{
+    td,th{
+      background: @l-gray
+    }
+  }
+}
+
+.equipment{
+  display: flex;
+  flex-direction: column;
+
+  .content{
+    flex-grow: 6;
+    display: flex;
+  }
+  .title{
+
+  }
+}
+.money{
+  flex-grow: 1;
+
+  .item{
+    display: flex;
+    .coin{
+      border: 2px solid @d-gray;
+      border-radius: .2cm;
+    }
+    .number{
+      flex-grow: 3;
+      border: 2px solid @d-gray;
+      border-radius: .2cm;
+    }
+  }
+}
+.bag{
+  flex-grow: 5;
+}
+
+
+
+.personality{
+  .item{
+    display: flex;
+    flex-direction: column;
+    .text{
+      flex-grow: 4;
+    }
+    .title{
+      text-align: center;
+    }
+  }
+}
+
+.features{
+  border: 2px solid @d-gray;
+  border-radius: .2cm;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  .text{
+      flex-grow: 9;
+    }
+    .title{
+      text-align: center;
+    }
+
+}
+/**/
 @media only screen and (min-width: 767px) {
 }
