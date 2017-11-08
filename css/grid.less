@@ -3,18 +3,18 @@
 	float: none;
     clear: both;
     overflow: hidden;
-    
+
     &:before, &:after{
         content: "";
         .clear;
         display: table;
-    }  	
+    }
     .left{
     	float: left;
     	text-align: left;
-    } 	
+    }
     .right{
-    	float: right;	
+    	float: right;
     	text-align: right;
     }
     .col2{
@@ -51,5 +51,6 @@
     align-items: stretch;
 }
 .column{
-    flex: 1 1 0;    
+    flex: 1 1 0;
+    flex-wrap: nowrap;
 }
