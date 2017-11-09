@@ -27,4 +27,10 @@ var oCharacter = {
       name: "sword"
     }
   ],
+  aFeat: [
+    ""
+  ],
+  aTraits: [
+    ""
+  ]
 }
