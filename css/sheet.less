@@ -5,13 +5,76 @@
   flex-wrap: nowrap;
 }
 .sheet{
-    background-color: @white;
-    width: 21cm;
-    height: 30cm;
-    margin: 0 auto;
-    padding: 0.8cm;
+  background-color: @white;
+  width: 21cm;
+  height: 30cm;
+  margin: 0 auto;
+  padding: 0.8cm;
+//  display: flex;
+//  flex-wrap: wrap;
+//  align-content: start;
+
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 2fr 3fr;
+  grid-template-rows: 2fr  2fr 3fr 1fr 5fr 4fr;
+  grid-gap: 10px;
+  //grid-auto-rows: minmax(100px, auto);
+
+  div{
+    background: rgba(0,0,0,.1);
+  }
 }
 
+.header_left{
+  grid-column: ~'1 / 4';
+  grid-row: 1;
+}
+.header_right{
+  grid-column: ~'4 / 6';
+  grid-row: 1;
+}
+.abilities{
+  grid-column: 1;
+  grid-row: ~'2 / 6';
+}
+.inspiration_PB{
+  grid-column: 2;
+  grid-row: 2;
+}
+.saving_throws{
+  grid-column: 2;
+  grid-row: 3;
+}
+.skills{
+  grid-column: 2;
+  grid-row: ~'4/6';
+}
+.PW_other{
+  grid-column: ~'1 / 3';
+  grid-row: 6;
+}
+.hit{
+  grid-column: ~'3 / 5';
+  grid-row: ~'2 / 5';
+}
+.attack{
+  grid-column: ~'3 / 5';
+  grid-row: ~'5 / 6';
+}
+.equipment{
+  grid-column: ~'3 / 5';
+  grid-row: 6;
+}
+.traits{
+  grid-column: 5;
+  grid-row: ~'2 / 5';
+}
+.features{
+  grid-column: 5;
+  grid-row: ~'5 / 7';
+}
+
+/*/
 .header_char{
   display: flex;
   margin-bottom: .3cm;
@@ -153,9 +216,8 @@
 
 }
 
-/* second column */
 .panel{
-  /*border: 2px solid @d-gray;*/
+
   border-radius: .2cm;
   background: @l-gray;
 
@@ -294,7 +356,7 @@
   flex-grow: 5;
 }
 
-/* 3 column */
+
 
 .personality{
   .item{
@@ -323,3 +385,4 @@
     }
 
 }
+/**/
